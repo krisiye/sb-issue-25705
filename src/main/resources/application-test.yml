@@ -1,0 +1,31 @@
+spring:
+  config:
+    import: consul://,vault://
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefix: test/${spring.application.name}
+        format: FILES
+    vault:
+      token: foo
+      enabled: true
+      scheme: http
+      kv:
+        enabled: true
+        backend: secret/test
+        application-name: ${spring.application.name}
+      consul:
+        enabled: true
+        role: consul-read-only
+        backend: consul        
+management:
+  metrics:
+    export:
+      datadog:
+        enabled: false
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    example: INFO  

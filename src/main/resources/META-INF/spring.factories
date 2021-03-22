@@ -1,0 +1,3 @@
+# Bootstrap Configuration: META-INF/spring.factories
+org.springframework.cloud.bootstrap.BootstrapConfiguration=\
+example.springboot.VaultForConsulBootstrapConfiguration
