@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.3</version>
+		<version>3.0.0</version>
 	</parent>
   <groupId>example</groupId>
   <artifactId>springboot</artifactId>
@@ -15,10 +15,10 @@
   <url>http://maven.apache.org</url>
 
 	<properties>
-		<java.version>15</java.version>
-		<maven.compiler.source>15</maven.compiler.source>
-		<maven.compiler.target>15</maven.compiler.target>
-		<spring-cloud.version>2020.0.2</spring-cloud.version>
+		<java.version>19</java.version>
+		<maven.compiler.source>19</maven.compiler.source>
+		<maven.compiler.target>19</maven.compiler.target>
+		<spring-cloud.version>2022.0.0-RC2</spring-cloud.version>
 	</properties>
 
     <dependencyManagement>
@@ -30,13 +30,13 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-			<dependency>
-				<groupId>io.awspring.cloud</groupId>
-				<artifactId>spring-cloud-aws-dependencies</artifactId>
-				<version>2.3.0</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+	    <dependency>
+		<groupId>io.awspring.cloud</groupId>
+		<artifactId>spring-cloud-aws-dependencies</artifactId>
+		<version>2.4.2</version>
+		<type>pom</type>
+		<scope>import</scope>
+	  </dependency>
       </dependencies>
     </dependencyManagement>
     
@@ -66,7 +66,7 @@
 		<dependency>
 		  <groupId>org.springframework.vault</groupId>
 		  <artifactId>spring-vault-core</artifactId>
-		  <version>2.3.2</version>
+		  <version>3.0.0</version>
 		</dependency>	    
 		<dependency>
 		  <groupId>org.springframework.cloud</groupId>
@@ -186,6 +186,11 @@
 		</plugins>
 	</build>
     <repositories>
+    <repository> 
+        <id>repository.spring.milestone</id> 
+        <name>Spring Milestone Repository</name> 
+        <url>https://repo.spring.io/milestone</url> 
+    </repository>
         <repository>
           <id>spring-snapshots</id>
           <name>Spring Snapshots</name>
