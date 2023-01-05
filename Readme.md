@@ -39,11 +39,6 @@ https://github.com/spring-projects/spring-boot/issues/25705
 #### Tests for consul ACL token
 
 ```
- mvn test -Dtest=AppTest
+ mvn clean test -Dspring.config.import=consul:,vault: -Dtest=AppTest
 ```
 
-#### Tests for Legacy bootstrap processing
-
-```
- mvn test -Dspring.config.use-legacy-processing=true -Dtest=AppTest
-```
